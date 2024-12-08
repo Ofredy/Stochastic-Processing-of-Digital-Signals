@@ -5,9 +5,9 @@ from mpl_toolkits.mplot3d import Axes3D
 import scipy.io as sio
 import cv2
 
-# Create a directory for saving figures
-output_dir = "figures"
-os.makedirs(output_dir, exist_ok=True)
+# directory for saving figures
+output_dir = os.path.join("figures")
+
 
 ############### Problem 1 ###############
 
@@ -122,7 +122,7 @@ print("Covariance matrix of projected data (1b):\n", cov_Y_b)
 ############### Problem 3: Geospatial Image ###############
 
 # Load the geospatial image from MATLAB file
-file1_path = 'geospatialImage.mat'
+file1_path = os.path.join('..', 'data', 'geospatialImage.mat')
 data1 = sio.loadmat(file1_path)
 image1 = data1['Geospatial']
 
@@ -159,7 +159,7 @@ plt.show()
 ############### Problem 3: MRI Image ###############
 
 # Load the MRI image from MATLAB file
-file2_path = 'GrayScaleMRI.mat'
+file2_path = os.path.join('..', 'data', 'GrayScaleMRI.mat')
 data2 = sio.loadmat(file2_path)
 image2 = data2['GrayScaleMRI']
 
